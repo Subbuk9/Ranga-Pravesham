@@ -1,18 +1,40 @@
 
-const targetDate = new Date('2026-07-18T15:00:00');
+const targetDate = new Date("July 18, 2026 15:00:00");
 
-function updateCountdown(){
- const diff = targetDate - new Date();
- if(diff < 0) return;
+function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate.getTime() - now.getTime();
 
- const d=Math.floor(diff/86400000);
- const h=Math.floor(diff/3600000)%24;
- const m=Math.floor(diff/60000)%60;
- const s=Math.floor(diff/1000)%60;
+    if (diff <= 0) {
+        document.getElementById("countdown").innerHTML =
+            "The Ranga Pravesha has begun!";
+        return;
+    }
 
- document.getElementById('countdown').innerHTML =
- `${d} Days ${h} Hours ${m} Minutes ${s} Seconds`;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML = `
+        <div class="countdown-box">
+            <span>${days}</span>
+            <small>Days</small>
+        </div>
+        <div class="countdown-box">
+            <span>${hours}</span>
+            <small>Hours</small>
+        </div>
+        <div class="countdown-box">
+            <span>${minutes}</span>
+            <small>Minutes</small>
+        </div>
+        <div class="countdown-box">
+            <span>${seconds}</span>
+            <small>Seconds</small>
+        </div>
+    `;
 }
 
-setInterval(updateCountdown,1000);
 updateCountdown();
+setInterval(updateCountdown, 1000);

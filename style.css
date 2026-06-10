@@ -1,105 +1,15 @@
 
-html{scroll-behavior:smooth}
-body{
-margin:0;
-font-family:'Montserrat',sans-serif;
-background:linear-gradient(to bottom,#f8f6ff,#eef3ff);
-color:#222;
-overflow-x:hidden;
-}
-
-.navbar{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 30px;
-background:rgba(18,25,50,.9);
-z-index:1000;
-box-sizing:border-box;
-}
-
-.logo,.navbar a,h1,h2,.btn{
-font-family:'Montserrat',sans-serif;
-}
-
-.logo{
-color:white;
-font-size:1.5rem;
-font-weight:700;
-}
-
-.links a{
-color:white;
-margin-left:20px;
-text-decoration:none;
-font-weight:600;
-}
-
-.hero{
-min-height:100vh;
-background:linear-gradient(rgba(20,20,40,.55),rgba(20,20,40,.55)),
-url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=2000');
-background-size:cover;
-background-position:center;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-color:white;
-}
-
-.hero h1{
-font-size:5rem;
-margin-bottom:10px;
-}
-
-.btn{
-display:inline-block;
-padding:14px 30px;
-background:#d4af37;
-border-radius:40px;
-text-decoration:none;
-color:black;
-font-weight:700;
-}
-
-.card{
-max-width:1100px;
-margin:40px auto;
-padding:40px;
-background:white;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-h2{color:#6b46c1}
-
-.slideshow img{
-width:100%;
-border-radius:15px;
-}
-
-iframe{
-width:100%;
-height:450px;
-border:0;
-border-radius:15px;
-}
-
-#countdown{
-font-size:1.5rem;
-font-weight:700;
-color:#2b6cb0;
-}
-
-footer{text-align:center;padding:40px}
-
-@media(max-width:768px){
-.hero h1{font-size:2.5rem}
-.navbar{flex-direction:column}
-.links{margin-top:10px}
-.card{margin:15px;padding:25px}
-}
+body{margin:0;font-family:'Montserrat',sans-serif;background:#f8f6ff;color:#222}
+.navbar{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;padding:15px 30px;background:rgba(18,25,50,.9);box-sizing:border-box}
+.logo,.links a{color:white;text-decoration:none}
+.links a{margin-left:15px}
+.hero{min-height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;background:linear-gradient(135deg,#2b6cb0,#6b46c1);color:white;padding:20px}
+.hero h1{font-size:4rem}
+.btn{background:#d4af37;color:black;padding:14px 28px;border-radius:30px;text-decoration:none}
+.card{max-width:1100px;margin:40px auto;padding:40px;background:white;border-radius:20px}
+.invite-content{text-align:center;line-height:1.8}
+.invite-content h3{color:#6b46c1}
+.event-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+iframe{width:100%;height:450px;border:0}
+#countdown{font-size:1.4rem;font-weight:700;color:#2b6cb0;margin-top:20px}
+@media(max-width:768px){.event-grid{grid-template-columns:1fr}.hero h1{font-size:2.3rem}}

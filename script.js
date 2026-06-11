@@ -40,7 +40,7 @@ function showNextSlide() {
 
 setInterval(showNextSlide, 4000);
 
-const galleryImagesClick =
+const galleryItems =
     document.querySelectorAll(".gallery-grid img");
 
 const lightbox =
@@ -49,9 +49,19 @@ const lightbox =
 const lightboxImage =
     document.getElementById("lightbox-image");
 
-galleryImagesClick.forEach(img => {
+const prevBtn =
+    document.getElementById("prevBtn");
 
-    img.addEventListener("click", () => {
+const nextBtn =
+    document.getElementById("nextBtn");
+
+let currentIndex = 0;
+
+galleryItems.forEach((img,index)=>{
+
+    img.addEventListener("click",()=>{
+
+        currentIndex = index;
 
         lightbox.style.display = "flex";
 
@@ -61,20 +71,71 @@ galleryImagesClick.forEach(img => {
 
 });
 
+function showImage(index){
+
+    if(index < 0){
+
+        currentIndex =
+            galleryItems.length - 1;
+
+    }
+    else if(index >= galleryItems.length){
+
+        currentIndex = 0;
+
+    }
+    else{
+
+        currentIndex = index;
+
+    }
+
+    lightboxImage.src =
+        galleryItems[currentIndex].src;
+}
+
+nextBtn.addEventListener("click",()=>{
+
+    showImage(currentIndex + 1);
+
+});
+
+prevBtn.addEventListener("click",()=>{
+
+    showImage(currentIndex - 1);
+
+});
+
 document
 .querySelector(".close-lightbox")
-.addEventListener("click", () => {
+.addEventListener("click",()=>{
 
     lightbox.style.display = "none";
 
 });
 
-lightbox.addEventListener("click", (e) => {
+lightbox.addEventListener("click",(e)=>{
 
     if(e.target === lightbox){
 
         lightbox.style.display = "none";
 
     }
+
+});
+
+document.addEventListener("keydown",(e)=>{
+
+    if(lightbox.style.display !== "flex")
+        return;
+
+    if(e.key === "ArrowRight")
+        showImage(currentIndex + 1);
+
+    if(e.key === "ArrowLeft")
+        showImage(currentIndex - 1);
+
+    if(e.key === "Escape")
+        lightbox.style.display = "none";
 
 });

@@ -39,3 +39,42 @@ function showNextSlide() {
 }
 
 setInterval(showNextSlide, 4000);
+
+const galleryImagesClick =
+    document.querySelectorAll(".gallery-grid img");
+
+const lightbox =
+    document.getElementById("lightbox");
+
+const lightboxImage =
+    document.getElementById("lightbox-image");
+
+galleryImagesClick.forEach(img => {
+
+    img.addEventListener("click", () => {
+
+        lightbox.style.display = "flex";
+
+        lightboxImage.src = img.src;
+
+    });
+
+});
+
+document
+.querySelector(".close-lightbox")
+.addEventListener("click", () => {
+
+    lightbox.style.display = "none";
+
+});
+
+lightbox.addEventListener("click", (e) => {
+
+    if(e.target === lightbox){
+
+        lightbox.style.display = "none";
+
+    }
+
+});

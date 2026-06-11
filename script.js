@@ -43,26 +43,27 @@ window.addEventListener("load", () => {
 
     const image = document.getElementById("galleryImage");
 
-    if (!image) return;
-
     setInterval(() => {
 
-        currentGalleryImage++;
-
-        if (currentGalleryImage >= galleryImages.length) {
-            currentGalleryImage = 0;
-        }
-
-        image.style.opacity = "0";
+        image.style.opacity = 0.25;
 
         setTimeout(() => {
 
-            image.src = galleryImages[currentGalleryImage];
+            currentGalleryImage =
+                (currentGalleryImage + 1) %
+                galleryImages.length;
 
-            image.style.opacity = "1";
+            image.src =
+                galleryImages[currentGalleryImage];
 
-        }, 300);
+        }, 600);
 
-    }, 4000);
+        setTimeout(() => {
+
+            image.style.opacity = 1;
+
+        }, 650);
+
+    }, 5000);
 
 });

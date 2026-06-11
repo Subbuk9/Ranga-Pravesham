@@ -21,106 +21,60 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown,1000);
 
-/* =====================================
-GALLERY LIGHTBOX
-===================================== */
+const galleryImages = [
+"images/DSC_3232.jpg",
+"images/DSC_3319.jpg",
+"images/DSC_3667.jpg",
+"images/DSC_3670.jpg",
+"images/DSC_3679.jpg",
+"images/DSC_3691.jpg",
+"images/DSC_3693.jpg",
+"images/DSC_3727.jpg",
+"images/DSC_3788.jpg",
+"images/DSC_3795.jpg",
+"images/DSC_3810.jpg",
+"images/DSC_3812.jpg",
+"images/DSC_3813.jpg",
+"images/DSC_3836.jpg",
+"images/DSC_3844.jpg",
+"images/DSC_3853.jpg",
+"images/DSC_3880.jpg",
+"images/DSC_4356.jpg",
+"images/DSC_4401.jpg",
+"images/DSC_4405.jpg",
+"images/DSC_4457.jpg",
+"images/DSC_4467.jpg",
+"images/DSC_4517.jpg",
+"images/DSC_4548.jpg",
+"images/DSC_4765.jpg",
+"images/DSC_4768.jpg",
+"images/DSC_4773.jpg",
+"images/DSC_4780.jpg",
+"images/DSC_4826.jpg",
+"images/DSC_4905.jpg",
+"images/DSC_4912.jpg"
+];
 
-const galleryItems =
-    document.querySelectorAll(".gallery-grid img");
+let currentImage = 0;
 
-const lightbox =
-    document.getElementById("lightbox");
+window.addEventListener("load", () => {
 
-const lightboxImage =
-    document.getElementById("lightbox-image");
+```
+const image = document.getElementById("galleryImage");
 
-const prevBtn =
-    document.getElementById("prevBtn");
+setInterval(() => {
 
-const nextBtn =
-    document.getElementById("nextBtn");
+    currentImage =
+        (currentImage + 1) % galleryImages.length;
 
-let currentIndex = 0;
+    image.style.opacity = 0;
 
-galleryItems.forEach((img,index)=>{
+    setTimeout(() => {
+        image.src = galleryImages[currentImage];
+        image.style.opacity = 1;
+    }, 300);
 
-    img.addEventListener("click",()=>{
-
-        currentIndex = index;
-
-        lightbox.style.display = "flex";
-
-        lightboxImage.src = img.src;
-
-    });
-
-});
-
-function showImage(index){
-
-    if(index < 0){
-
-        currentIndex =
-            galleryItems.length - 1;
-
-    }
-    else if(index >= galleryItems.length){
-
-        currentIndex = 0;
-
-    }
-    else{
-
-        currentIndex = index;
-
-    }
-
-    lightboxImage.src =
-        galleryItems[currentIndex].src;
-}
-
-nextBtn.addEventListener("click",()=>{
-
-    showImage(currentIndex + 1);
-
-});
-
-prevBtn.addEventListener("click",()=>{
-
-    showImage(currentIndex - 1);
-
-});
-
-document
-.querySelector(".close-lightbox")
-.addEventListener("click",()=>{
-
-    lightbox.style.display = "none";
-
-});
-
-lightbox.addEventListener("click",(e)=>{
-
-    if(e.target === lightbox){
-
-        lightbox.style.display = "none";
-
-    }
-
-});
-
-document.addEventListener("keydown",(e)=>{
-
-    if(lightbox.style.display !== "flex")
-        return;
-
-    if(e.key === "ArrowRight")
-        showImage(currentIndex + 1);
-
-    if(e.key === "ArrowLeft")
-        showImage(currentIndex - 1);
-
-    if(e.key === "Escape")
-        lightbox.style.display = "none";
+}, 4000);
+```
 
 });

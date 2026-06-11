@@ -3,20 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ranga Pravesha</title>
+<title>Aashritha Kanumuri & Tanmayee Sista - Ranga Pravesha</title>
+
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<nav class="navbar">
+<div class="logo">Ranga Pravesha</div>
+<div class="links">
+<a href="#invitation">Invitation</a>
+<a href="#details">Details</a>
+<a href="#gallery">Gallery</a>
+<a href="#location">Location</a>
+<a href="#rsvp">RSVP</a>
+</div>
+</nav>
+
 <header class="hero">
 <div class="hero-overlay">
-<h1>Ranga Pravesha</h1>
+<h1>Aashritha Kanumuri<br>&<br>Tanmayee Sista</h1>
+<p>Ranga Pravesha</p>
+<p>Under the Guidance of Guru Sheela Chandrashekar</p>
+<a href="#rsvp" class="btn">RSVP Now</a>
 </div>
 </header>
 
 <section id="invitation" class="card">
-<h2>Invitation</h2>
+<h2>Ranga Pravesha Invitation</h2>
 
 <div class="invite-content">
 <p><strong>Rathi Arts Foundation</strong><br>
@@ -25,7 +40,7 @@ Guru Sheela Chandrashekar<br>
 
 <p>and</p>
 
-<p><strong>Kanumuri, Kilari, Ayyagari & Sista families</strong></p>
+<p><strong>Sista, Ayyagari, Kanumuri and extended families</strong></p>
 
 <p>Cordially invite you to the</p>
 
@@ -34,39 +49,104 @@ Guru Sheela Chandrashekar<br>
 <p>of</p>
 
 <h3>Aashritha Kanumuri</h3>
-<p><i>Daughter of Subbarao Kanumuri & Radhika Kilari</i></p>
+<p>Daughter of Subbarao Kanumuri & Radhika</p>
 
 <p>and</p>
 
 <h3>Tanmayee Sista</h3>
-<p><i>Daughter of Kalyan Sista & Kameswari Ayyagari</i></p>
+<p>Daughter of Kalyan Sista & Kameswari Ayyagari</p>
 </div>
 </section>
 
-<section id="rsvp" class="card rsvp-section">
+<section id="details" class="card">
+<h2>Event Details</h2>
+
+<div class="event-grid">
+<div>
+<h3>Date & Time</h3>
+<p>Saturday, July 18, 2026</p>
+<p>3:00 PM - 6:00 PM EST</p>
+<p>Doors Open at 2:30 PM</p>
+</div>
+
+<div>
+<h3>Venue</h3>
+<p>Shenkman Arts Centre</p>
+<p>245 Centrum Blvd.</p>
+<p>Ottawa, ON K1E 0A1</p>
+</div>
+</div>
+
+<div id="countdown"></div>
+</section>
+
+<section id="gallery" class="card">
+<h2>Gallery</h2>
+<p>Add your dance photos here.</p>
+</section>
+
+<section id="location" class="card">
+<h2>Location</h2>
+<iframe src="https://maps.google.com/maps?q=Shenkman%20Arts%20Centre%20Ottawa&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+</section>
+
+
+<section id="rsvp" class="card">
 <h2>RSVP</h2>
+<p class="rsvp-subtitle">Please let us know if you'll be joining us to celebrate this special milestone.</p>
 
-<form>
+<form id="rsvpForm">
 <div class="form-row">
-<input type="text" placeholder="Your full name">
-<input type="email" placeholder="your@email.com">
+<div class="form-group">
+<label>Full Name *</label>
+<input type="text" required>
+</div>
+<div class="form-group">
+<label>Email Address *</label>
+<input type="email" required>
+</div>
 </div>
 
 <div class="form-row">
-<input type="text" placeholder="(613) 000-0000">
-
-<div class="attendance-buttons">
-<button type="button" class="attend-btn active">✓ Attending</button>
-<button type="button" class="attend-btn">? Maybe</button>
-<button type="button" class="attend-btn">✕ Can't Make It</button>
+<div class="form-group">
+<label>Phone Number</label>
+<input type="tel">
+</div>
+<div class="form-group">
+<label>Attendance *</label>
+<select>
+<option>Attending</option>
+<option>Maybe</option>
+<option>Cannot Attend</option>
+</select>
 </div>
 </div>
 
-<textarea rows="5" placeholder="Share your wishes..."></textarea>
+<div class="form-row">
+<div class="form-group">
+<label>Adults</label>
+<input type="number" value="1" min="0">
+</div>
+<div class="form-group">
+<label>Children</label>
+<input type="number" value="0" min="0">
+</div>
+</div>
 
-<button class="rsvp-button" type="button">SEND MY RSVP</button>
+<div class="form-group">
+<label>Message for Aashritha & Tanmayee</label>
+<textarea rows="5"></textarea>
+</div>
+
+<button type="submit" class="rsvp-button">Send My RSVP</button>
 </form>
 </section>
 
+
+<footer>
+<p>© 2026 Ranga Pravesha Celebration</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

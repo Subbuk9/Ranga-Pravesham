@@ -57,15 +57,25 @@ const galleryImages = [
 
 let currentImage = 0;
 
-const galleryImage =
-    document.getElementById("galleryImage");
+window.onload = function () {
 
-setInterval(() => {
+    const img = document.getElementById("galleryImage");
 
-    currentImage =
-        (currentImage + 1) % galleryImages.length;
+    setInterval(function () {
 
-    galleryImage.src =
-        galleryImages[currentImage];
+        currentImage++;
 
-}, 4000);
+        if (currentImage >= galleryImages.length) {
+            currentImage = 0;
+        }
+
+        img.style.opacity = 0;
+
+        setTimeout(function () {
+            img.src = galleryImages[currentImage];
+            img.style.opacity = 1;
+        }, 300);
+
+    }, 4000);
+
+};

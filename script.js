@@ -22,60 +22,47 @@ updateCountdown();
 setInterval(updateCountdown,1000);
 
 const galleryImages = [
-    "images/DSC_3232.jpg",
-    "images/DSC_3319.jpg",
-    "images/DSC_3667.jpg",
-    "images/DSC_3670.jpg",
-    "images/DSC_3679.jpg",
-    "images/DSC_3691.jpg",
-    "images/DSC_3693.jpg",
-    "images/DSC_3727.jpg",
-    "images/DSC_3788.jpg",
-    "images/DSC_3795.jpg",
+    "images/DSC_3195.jpg",
+    "images/DSC_3315.jpg",
+    "images/DSC_3766.jpg",
     "images/DSC_3810.jpg",
-    "images/DSC_3812.jpg",
-    "images/DSC_3813.jpg",
     "images/DSC_3836.jpg",
-    "images/DSC_3844.jpg",
     "images/DSC_3853.jpg",
-    "images/DSC_3880.jpg",
-    "images/DSC_4356.jpg",
-    "images/DSC_4401.jpg",
-    "images/DSC_4405.jpg",
+    "images/DSC_4355.jpg",
     "images/DSC_4457.jpg",
     "images/DSC_4467.jpg",
-    "images/DSC_4517.jpg",
-    "images/DSC_4548.jpg",
-    "images/DSC_4765.jpg",
-    "images/DSC_4768.jpg",
-    "images/DSC_4773.jpg",
     "images/DSC_4780.jpg",
-    "images/DSC_4826.jpg",
+    "images/DSC_4902.jpg",
     "images/DSC_4905.jpg",
     "images/DSC_4912.jpg"
 ];
 
-let currentImage = 0;
+let currentGalleryImage = 0;
 
-window.onload = function () {
+window.addEventListener("load", () => {
 
-    const img = document.getElementById("galleryImage");
+    const image = document.getElementById("galleryImage");
 
-    setInterval(function () {
+    if (!image) return;
 
-        currentImage++;
+    setInterval(() => {
 
-        if (currentImage >= galleryImages.length) {
-            currentImage = 0;
+        currentGalleryImage++;
+
+        if (currentGalleryImage >= galleryImages.length) {
+            currentGalleryImage = 0;
         }
 
-        img.style.opacity = 0;
+        image.style.opacity = "0";
 
-        setTimeout(function () {
-            img.src = galleryImages[currentImage];
-            img.style.opacity = 1;
+        setTimeout(() => {
+
+            image.src = galleryImages[currentGalleryImage];
+
+            image.style.opacity = "1";
+
         }, 300);
 
     }, 4000);
 
-};
+});

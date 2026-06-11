@@ -30,26 +30,41 @@ iframe{width:100%;height:450px;border:0}
 @media(max-width:768px){.form-row{grid-template-columns:1fr}}
 
 .gallery-slider{
-width:100%;
-max-width:900px;
-margin:auto;
+    width:100%;
+    max-width:900px;
+    margin:auto;
 }
 
 #galleryImage{
-width:100%;
-height:600px;
 
+    width:100%;
+    height:650px;
 
-object-fit:cover;
+    object-fit:contain;
 
-border-radius:20px;
+    background:linear-gradient(
+        135deg,
+        #f7f0d8,
+        #fdfaf1
+    );
 
-display:block;
+    border:4px solid #d4af37;
 
-margin:auto;
+    border-radius:20px;
 
-transition:opacity .8s ease-in-out;
+    display:block;
 
-box-shadow:0 10px 25px rgba(0,0,0,.15);
+    margin:auto;
+
+    transition:opacity .8s ease-in-out;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+@media(max-width:768px){
+
+    #galleryImage{
+        height:450px;
+    }
 
 }

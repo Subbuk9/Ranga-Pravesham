@@ -140,53 +140,85 @@ document.addEventListener("keydown",(e)=>{
 
 });
 
-const galleryImages = [
-    "images/DSC_3232.jpg",
-    "images/DSC_3319.jpg",
-    "images/DSC_3667.jpg",
-    "images/DSC_3670.jpg",
-    "images/DSC_3679.jpg",
-    "images/DSC_3691.jpg",
-    "images/DSC_3693.jpg",
-    "images/DSC_3727.jpg",
-    "images/DSC_3788.jpg",
-    "images/DSC_3795.jpg",
-    "images/DSC_3810.jpg",
-    "images/DSC_3812.jpg",
-    "images/DSC_3813.jpg",
-    "images/DSC_3836.jpg",
-    "images/DSC_3844.jpg",
-    "images/DSC_3853.jpg",
-    "images/DSC_3880.jpg",
-    "images/DSC_4356.jpg",
-    "images/DSC_4401.jpg",
-    "images/DSC_4405.jpg",
-    "images/DSC_4457.jpg",
-    "images/DSC_4467.jpg",
-    "images/DSC_4517.jpg",
-    "images/DSC_4548.jpg",
-    "images/DSC_4765.jpg",
-    "images/DSC_4768.jpg",
-    "images/DSC_4773.jpg",
-    "images/DSC_4780.jpg",
-    "images/DSC_4826.jpg",
-    "images/DSC_4905.jpg",
-    "images/DSC_4912.jpg"
-];
+const slides =
+    document.querySelectorAll(".gallery-slide");
 
-let currentImage = 0;
+let currentSlide = 0;
 
-const galleryImage =
-    document.getElementById("galleryImage");
+function showSlide(index){
 
-function nextGalleryImage(){
+    slides[currentSlide]
+        .classList.remove("active");
 
-    currentImage =
-        (currentImage + 1) %
-        galleryImages.length;
+    currentSlide =
+        (index + slides.length)
+        % slides.length;
 
-    galleryImage.src =
-        galleryImages[currentImage];
+    slides[currentSlide]
+        .classList.add("active");
 }
 
-setInterval(nextGalleryImage, 5000);
+setInterval(() => {
+
+    showSlide(currentSlide + 1);
+
+}, 5000);
+
+
+/* LIGHTBOX */
+
+const lightbox =
+    document.getElementById("lightbox");
+
+const lightboxImage =
+    document.getElementById("lightbox-image");
+
+document.querySelectorAll(".gallery-slide")
+.forEach((img,index)=>{
+
+    img.addEventListener("click",()=>{
+
+        currentSlide = index;
+
+        lightbox.style.display = "flex";
+
+        lightboxImage.src = img.src;
+
+    });
+
+});
+
+function updateLightbox(){
+
+    lightboxImage.src =
+        slides[currentSlide].src;
+}
+
+document.getElementById("nextBtn")
+.addEventListener("click",()=>{
+
+    currentSlide =
+        (currentSlide + 1) %
+        slides.length;
+
+    updateLightbox();
+
+});
+
+document.getElementById("prevBtn")
+.addEventListener("click",()=>{
+
+    currentSlide =
+        (currentSlide - 1 + slides.length)
+        % slides.length;
+
+    updateLightbox();
+
+});
+
+document.querySelector(".close-lightbox")
+.addEventListener("click",()=>{
+
+    lightbox.style.display = "none";
+
+});

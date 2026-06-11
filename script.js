@@ -21,204 +21,133 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown,1000);
 
-const slides =
-    document.querySelectorAll(".gallery-slide");
-
-let currentSlide = 0;
-
-function showNextSlide() {
-
-    slides[currentSlide]
-        .classList.remove("active");
-
-    currentSlide =
-        (currentSlide + 1) % slides.length;
-
-    slides[currentSlide]
-        .classList.add("active");
-}
-
-setInterval(showNextSlide, 4000);
+/* =====================================
+GALLERY LIGHTBOX
+===================================== */
 
 const galleryItems =
-    document.querySelectorAll(".gallery-grid img");
+document.querySelectorAll(".gallery-grid img");
 
 const lightbox =
-    document.getElementById("lightbox");
+document.getElementById("lightbox");
 
 const lightboxImage =
-    document.getElementById("lightbox-image");
+document.getElementById("lightbox-image");
 
 const prevBtn =
-    document.getElementById("prevBtn");
+document.getElementById("prevBtn");
 
 const nextBtn =
-    document.getElementById("nextBtn");
+document.getElementById("nextBtn");
 
 let currentIndex = 0;
 
+/* Open Image */
+
 galleryItems.forEach((img,index)=>{
 
-    img.addEventListener("click",()=>{
+```
+img.addEventListener("click",()=>{
 
-        currentIndex = index;
+    currentIndex = index;
 
-        lightbox.style.display = "flex";
+    lightbox.style.display = "flex";
 
-        lightboxImage.src = img.src;
-
-    });
+    lightboxImage.src = img.src;
 
 });
+```
+
+});
+
+/* Change Image */
 
 function showImage(index){
 
-    if(index < 0){
+```
+if(index < 0){
 
-        currentIndex =
-            galleryItems.length - 1;
+    currentIndex =
+        galleryItems.length - 1;
 
-    }
-    else if(index >= galleryItems.length){
-
-        currentIndex = 0;
-
-    }
-    else{
-
-        currentIndex = index;
-
-    }
-
-    lightboxImage.src =
-        galleryItems[currentIndex].src;
 }
+else if(index >= galleryItems.length){
+
+    currentIndex = 0;
+
+}
+else{
+
+    currentIndex = index;
+
+}
+
+lightboxImage.src =
+    galleryItems[currentIndex].src;
+```
+
+}
+
+/* Next */
 
 nextBtn.addEventListener("click",()=>{
 
-    showImage(currentIndex + 1);
+```
+showImage(currentIndex + 1);
+```
 
 });
+
+/* Previous */
 
 prevBtn.addEventListener("click",()=>{
 
-    showImage(currentIndex - 1);
+```
+showImage(currentIndex - 1);
+```
 
 });
+
+/* Close */
 
 document
 .querySelector(".close-lightbox")
 .addEventListener("click",()=>{
 
-    lightbox.style.display = "none";
+```
+lightbox.style.display = "none";
+```
 
 });
 
 lightbox.addEventListener("click",(e)=>{
 
-    if(e.target === lightbox){
+```
+if(e.target === lightbox){
 
-        lightbox.style.display = "none";
+    lightbox.style.display = "none";
 
-    }
+}
+```
 
 });
+
+/* Keyboard */
 
 document.addEventListener("keydown",(e)=>{
 
-    if(lightbox.style.display !== "flex")
-        return;
+```
+if(lightbox.style.display !== "flex")
+    return;
 
-    if(e.key === "ArrowRight")
-        showImage(currentIndex + 1);
+if(e.key === "ArrowRight")
+    showImage(currentIndex + 1);
 
-    if(e.key === "ArrowLeft")
-        showImage(currentIndex - 1);
+if(e.key === "ArrowLeft")
+    showImage(currentIndex - 1);
 
-    if(e.key === "Escape")
-        lightbox.style.display = "none";
-
-});
-
-const slides =
-    document.querySelectorAll(".gallery-slide");
-
-let currentSlide = 0;
-
-function showSlide(index){
-
-    slides[currentSlide]
-        .classList.remove("active");
-
-    currentSlide =
-        (index + slides.length)
-        % slides.length;
-
-    slides[currentSlide]
-        .classList.add("active");
-}
-
-setInterval(() => {
-
-    showSlide(currentSlide + 1);
-
-}, 5000);
-
-
-/* LIGHTBOX */
-
-const lightbox =
-    document.getElementById("lightbox");
-
-const lightboxImage =
-    document.getElementById("lightbox-image");
-
-document.querySelectorAll(".gallery-slide")
-.forEach((img,index)=>{
-
-    img.addEventListener("click",()=>{
-
-        currentSlide = index;
-
-        lightbox.style.display = "flex";
-
-        lightboxImage.src = img.src;
-
-    });
-
-});
-
-function updateLightbox(){
-
-    lightboxImage.src =
-        slides[currentSlide].src;
-}
-
-document.getElementById("nextBtn")
-.addEventListener("click",()=>{
-
-    currentSlide =
-        (currentSlide + 1) %
-        slides.length;
-
-    updateLightbox();
-
-});
-
-document.getElementById("prevBtn")
-.addEventListener("click",()=>{
-
-    currentSlide =
-        (currentSlide - 1 + slides.length)
-        % slides.length;
-
-    updateLightbox();
-
-});
-
-document.querySelector(".close-lightbox")
-.addEventListener("click",()=>{
-
+if(e.key === "Escape")
     lightbox.style.display = "none";
+```
 
 });

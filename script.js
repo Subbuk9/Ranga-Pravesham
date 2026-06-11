@@ -21,61 +21,21 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown,1000);
 
-const galleryImages = [
-    "images/DSC_3232.jpg",
-    "images/DSC_3319.jpg",
-    "images/DSC_3667.jpg",
-    "images/DSC_3670.jpg",
-    "images/DSC_3679.jpg",
-    "images/DSC_3691.jpg",
-    "images/DSC_3693.jpg",
-    "images/DSC_3727.jpg",
-    "images/DSC_3788.jpg",
-    "images/DSC_3795.jpg",
-    "images/DSC_3810.jpg",
-    "images/DSC_3812.jpg",
-    "images/DSC_3813.jpg",
-    "images/DSC_3836.jpg",
-    "images/DSC_3844.jpg",
-    "images/DSC_3853.jpg",
-    "images/DSC_3880.jpg",
-    "images/DSC_4356.jpg",
-    "images/DSC_4401.jpg",
-    "images/DSC_4405.jpg",
-    "images/DSC_4457.jpg",
-    "images/DSC_4467.jpg",
-    "images/DSC_4517.jpg",
-    "images/DSC_4548.jpg",
-    "images/DSC_4765.jpg",
-    "images/DSC_4768.jpg",
-    "images/DSC_4773.jpg",
-    "images/DSC_4780.jpg",
-    "images/DSC_4826.jpg",
-    "images/DSC_4905.jpg",
-    "images/DSC_4912.jpg"
-];
+const slides =
+    document.querySelectorAll(".gallery-slide");
 
-let galleryIndex = 0;
+let currentSlide = 0;
 
-function cycleGallery() {
+function showNextSlide() {
 
-    galleryIndex++;
+    slides[currentSlide]
+        .classList.remove("active");
 
-    if (galleryIndex >= galleryImages.length) {
-        galleryIndex = 0;
-    }
+    currentSlide =
+        (currentSlide + 1) % slides.length;
 
-    const image = document.getElementById("galleryImage");
-
-    image.style.opacity = 0;
-
-    setTimeout(() => {
-
-        image.src = galleryImages[galleryIndex];
-
-        image.style.opacity = 1;
-
-    }, 300);
+    slides[currentSlide]
+        .classList.add("active");
 }
 
-setInterval(cycleGallery, 5000);
+setInterval(showNextSlide, 4000);

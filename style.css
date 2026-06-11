@@ -35,31 +35,27 @@ iframe{width:100%;height:450px;border:0}
 
 .gallery-grid{
 
-    column-count:3;
-    column-gap:16px;
+    columns: 3 250px;
+    column-gap: 15px;
 
-    max-width:1200px;
-
-    margin:auto;
 }
 
 .gallery-grid img{
 
     width:100%;
 
-    display:block;
-
-    margin-bottom:16px;
+    margin-bottom:15px;
 
     border-radius:18px;
 
-    break-inside:avoid;
+    display:block;
 
-    box-shadow:0 8px 20px rgba(0,0,0,.12);
+    break-inside:avoid;
 
     transition:.3s ease;
 
     cursor:pointer;
+
 }
 
 .gallery-grid img:hover{
@@ -68,41 +64,15 @@ iframe{width:100%;height:450px;border:0}
 
 }
 
-/* Tablet */
-
-@media(max-width:1024px){
-
-    .gallery-grid{
-
-        column-count:2;
-
-    }
-
-}
-
-/* Phone */
-
 @media(max-width:768px){
 
     .gallery-grid{
 
-        column-count:1;
-
-    }
-
-    .gallery-grid img{
-
-        margin-bottom:12px;
-
-        border-radius:14px;
+        columns:1;
 
     }
 
 }
-
-/* =====================================
-   LIGHTBOX
-===================================== */
 
 .lightbox{
 
@@ -110,24 +80,26 @@ iframe{width:100%;height:450px;border:0}
 
     position:fixed;
 
-    inset:0;
-
     z-index:9999;
 
-    background:rgba(0,0,0,.95);
+    left:0;
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.9);
 
     justify-content:center;
-
     align-items:center;
 }
 
 .lightbox img{
 
-    max-width:90vw;
+    max-width:90%;
+    max-height:90%;
 
-    max-height:90vh;
-
-    border-radius:15px;
+    border-radius:10px;
 }
 
 .close-lightbox{
@@ -135,16 +107,13 @@ iframe{width:100%;height:450px;border:0}
     position:absolute;
 
     top:20px;
-
     right:30px;
 
     color:white;
 
-    font-size:50px;
+    font-size:40px;
 
     cursor:pointer;
-
-    z-index:10000;
 }
 
 .nav-btn{
@@ -155,7 +124,7 @@ iframe{width:100%;height:450px;border:0}
 
     transform:translateY(-50%);
 
-    background:rgba(255,255,255,.15);
+    background:rgba(255,255,255,.2);
 
     border:none;
 
@@ -170,13 +139,11 @@ iframe{width:100%;height:450px;border:0}
     border-radius:12px;
 
     transition:.3s;
-
-    z-index:10000;
 }
 
 .nav-btn:hover{
 
-    background:rgba(255,255,255,.35);
+    background:rgba(255,255,255,.4);
 
 }
 
@@ -189,17 +156,5 @@ iframe{width:100%;height:450px;border:0}
 #nextBtn{
 
     right:25px;
-
-}
-
-@media(max-width:768px){
-
-    .nav-btn{
-
-        font-size:36px;
-
-        padding:10px 15px;
-
-    }
 
 }

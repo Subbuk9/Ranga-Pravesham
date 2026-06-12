@@ -164,9 +164,12 @@ formData.append(
     )
     .then(() => {
 
-        document
-        .getElementById("successMessage")
-        .style.display = "block";
+       document
+      .getElementById("successMessage")
+      .scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+});
 
         document
         .getElementById("rsvpForm")

@@ -307,6 +307,82 @@ body{
 
 
 
+.countdown-wrapper{
+
+    background:#341d1f;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:80px;
+
+    padding:35px 50px;
+
+    margin:50px auto;
+
+    border-radius:20px;
+}
+
+.countdown-text{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:2rem;
+
+    font-style:italic;
+
+    color:#d6c4c4;
+}
+
+.countdown-modern{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+}
+
+.time-block{
+
+    text-align:center;
+}
+
+.time-value{
+
+    font-size:4rem;
+
+    color:#d4af37;
+
+    line-height:1;
+
+    font-family:'Cormorant Garamond',serif;
+}
+
+.time-label{
+
+    font-size:.9rem;
+
+    color:#c8b7b7;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+}
+
+.time-separator{
+
+    color:#8b6a32;
+
+    font-size:3rem;
+
+    margin-top:-20px;
+}
 
 .event-grid p{
     font-size:1.15rem;

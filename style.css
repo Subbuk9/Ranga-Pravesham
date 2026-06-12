@@ -284,6 +284,30 @@ body{
     margin-bottom:20px;
 }
 
+#rsvp h2{
+    color:#f5e8c7;
+}
+
+
+
+#rsvp{
+
+    background:
+
+    linear-gradient(
+        to bottom,
+        #f7f4ef 0%,
+        #eadcc5 8%,
+        #7d0027 35%,
+        #5b001c 100%
+    );
+
+    color:#f5e8c7;
+}
+
+
+
+
 .event-grid p{
     font-size:1.15rem;
     line-height:1.8;

@@ -636,21 +636,3 @@ footer{
         transform:translateY(0);
     }
 }
-
-.event-notes{
-
-    text-align:center;
-
-    margin-top:40px;
-
-    color:#5b001c;
-
-    line-height:1.8;
-}
-
-.event-notes p{
-
-    margin:10px 0;
-
-    font-size:1.15rem;
-}

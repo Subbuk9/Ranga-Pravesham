@@ -186,62 +186,77 @@
 
 <form id="rsvpForm">
 
-    <div class="form-row">
+   <div class="form-row">
 
-        <div class="form-group">
-            <label>Full Name *</label>
-            <input type="text" id="name" required>
-        </div>
+    <div class="form-group">
+        <label>Full Name *</label>
+        <input type="text" id="name" required>
+    </div>
 
-        <div class="form-group">
-            <label>Email Address *</label>
-            <input type="email" id="email" required>
-        </div>
+    <div class="form-group">
+        <label>Email Address *</label>
+        <input type="email" id="email" required>
+    </div>
+
+</div>
+
+<div class="form-row">
+
+    <div class="form-group">
+        <label>Phone Number *</label>
+        <input type="tel" id="phone" required>
+    </div>
+
+    <div class="form-group">
+        <label>Will You Attend? *</label>
+
+        <select id="attendance" required>
+            <option value="Yes">Yes</option>
+            <option value="Maybe">Maybe</option>
+            <option value="Can't make it">Can't make it</option>
+        </select>
 
     </div>
 
-    <div class="form-row">
+</div>
 
-        <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" id="phone">
-        </div>
+<div class="form-row">
 
-        <div class="form-group">
-            <label>Attendance *</label>
+    <div class="form-group">
+        <label>Number of People Attending *</label>
 
-            <select id="attendance">
-                <option>Yes</option>
-                <option>Maybe</option>
-                <option>No</option>
-            </select>
-
-        </div>
-
-    </div>
-
-    <div class="form-row">
-
-        <div class="form-group">
-            <label>Adults</label>
-            <input type="number" id="adults" value="1" min="0">
-        </div>
-
-        <div class="form-group">
-            <label>Children</label>
-            <input type="number" id="children" value="0" min="0">
-        </div>
+        <select id="peopleCount" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
 
     </div>
 
     <div class="form-group">
+        <label>Accessibility Requirements? *</label>
 
-        <label>Message for Aashritha & Tanmayee</label>
-
-        <textarea id="message" rows="5"></textarea>
+        <select id="accessibility" required>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select>
 
     </div>
 
+</div>
+
+<div class="form-group">
+
+    <label>Leave a Message for Aashritha & Tanmayee</label>
+
+    <textarea id="message" rows="5"></textarea>
+
+</div>
     <button type="submit" class="rsvp-button">
         Send My RSVP
     </button>

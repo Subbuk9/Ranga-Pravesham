@@ -119,40 +119,40 @@ document
 
     const formData = new FormData();
 
-    formData.append(
-        "entry.1191868580",
-        document.getElementById("name").value
-    );
+formData.append(
+    "entry.1191868580",
+    document.getElementById("name").value
+);
 
-    formData.append(
-        "entry.1819345462",
-        document.getElementById("email").value
-    );
+formData.append(
+    "entry.1819345462",
+    document.getElementById("email").value
+);
 
-    formData.append(
-        "entry.25566787",
-        document.getElementById("phone").value
-    );
+formData.append(
+    "entry.25566787",
+    document.getElementById("phone").value
+);
 
-    formData.append(
-        "entry.1075416591",
-        document.getElementById("attendance").value
-    );
+formData.append(
+    "entry.1075416591",
+    document.getElementById("attendance").value
+);
 
-    formData.append(
-        "entry.1301912319",
-        document.getElementById("adults").value
-    );
+formData.append(
+    "entry.1301912319",
+    document.getElementById("peopleCount").value
+);
 
-    formData.append(
-        "entry.124294925",
-        document.getElementById("children").value
-    );
+formData.append(
+    "entry.124294925",
+    document.getElementById("accessibility").value
+);
 
-    formData.append(
-        "entry.1257208760",
-        document.getElementById("message").value
-    );
+formData.append(
+    "entry.1257208760",
+    document.getElementById("message").value
+)
 
     fetch(
         "https://docs.google.com/forms/d/e/1FAIpQLSd3oiAoQOrBLI9mBcajq2e8F3dRdnVVS95NeNWAXtoggg-lQQ/formResponse",

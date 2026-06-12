@@ -307,46 +307,41 @@ body{
 
 
 
-.countdown-wrapper{
+.countdown-section{
 
-    background:#341d1f;
+    text-align:center;
 
-    color:white;
+    margin:60px auto;
 
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:80px;
-
-    padding:35px 50px;
-
-    margin:50px auto;
-
-    border-radius:20px;
+    max-width:1200px;
 }
 
-.countdown-text{
+.countdown-heading{
 
     font-family:'Cormorant Garamond',serif;
 
-    font-size:2rem;
-
     font-style:italic;
 
-    color:#d6c4c4;
+    font-size:2.2rem;
+
+    color:#7d0027;
+
+    margin-bottom:50px;
 }
 
 .countdown-modern{
 
     display:flex;
 
-    align-items:center;
+    justify-content:center;
 
-    gap:25px;
+    align-items:flex-start;
+
+    gap:50px;
+
+    flex-wrap:wrap;
 }
+
 
 .time-block{
 

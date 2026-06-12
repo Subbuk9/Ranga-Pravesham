@@ -631,3 +631,7 @@ footer{
         transform:translateY(0);
     }
 }
+
+.success-message{
+    display:none;
+}

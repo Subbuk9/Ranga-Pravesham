@@ -164,17 +164,20 @@ formData.append(
     )
     .then(() => {
 
-       document
-      .getElementById("successMessage")
-      .scrollIntoView({
-        behavior:"smooth",
-        block:"center"
-});
-
-        document
+    document
         .getElementById("rsvpForm")
-        .reset();
+        .style.display = "none";
 
-    });
+    document
+        .getElementById("successMessage")
+        .style.display = "block";
 
+    document
+        .getElementById("successMessage")
+        .scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+    })
 });

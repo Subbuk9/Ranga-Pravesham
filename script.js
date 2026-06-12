@@ -115,68 +115,85 @@ document
 .getElementById("rsvpForm")
 .addEventListener("submit", function(e){
 
-    e.preventDefault();
+```
+e.preventDefault();
 
-    const formData = new FormData();
+const form =
+document.createElement("form");
 
-formData.append(
+form.method = "POST";
+
+form.action =
+"https://docs.google.com/forms/d/e/1FAIpQLSd3oiAoQOrBLI9mBcajq2e8F3dRdnVVS95NeNWAXtoggg-lQQ/formResponse";
+
+form.target = "hidden_iframe";
+
+function addField(name,value){
+
+    const input =
+    document.createElement("input");
+
+    input.type = "hidden";
+
+    input.name = name;
+
+    input.value = value;
+
+    form.appendChild(input);
+}
+
+addField(
     "entry.1191868580",
     document.getElementById("name").value
 );
 
-formData.append(
+addField(
     "entry.1819345462",
     document.getElementById("email").value
 );
 
-formData.append(
+addField(
     "entry.25566787",
     document.getElementById("phone").value
 );
 
-formData.append(
+addField(
     "entry.1075416591",
     document.getElementById("attendance").value
 );
 
-formData.append(
+addField(
     "entry.1301912319",
     document.getElementById("peopleCount").value
 );
 
-formData.append(
+addField(
     "entry.124294925",
     document.getElementById("accessibility").value
 );
 
-formData.append(
+addField(
     "entry.1257208760",
     document.getElementById("message").value
-)
+);
 
-   fetch(
-    "https://docs.google.com/forms/d/e/1FAIpQLSd3oiAoQOrBLI9mBcajq2e8F3dRdnVVS95NeNWAXtoggg-lQQ/formResponse",
-    {
-        method:"POST",
-        mode:"no-cors",
-        body:formData
-    }
-)
-.then(() => {
+document.body.appendChild(form);
 
-    const success =
-        document.getElementById("successMessage");
+form.submit();
 
-    success.style.display = "block";
+const success =
+    document.getElementById("successMessage");
 
-    success.scrollIntoView({
-        behavior:"smooth",
-        block:"center"
-    });
+success.style.display = "block";
 
-    document
-        .getElementById("rsvpForm")
-        .reset(); 
-            
-})      
+success.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+});
+
+document
+    .getElementById("rsvpForm")
+    .reset();
+```
+
 });

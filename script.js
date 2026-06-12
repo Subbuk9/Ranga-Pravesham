@@ -162,19 +162,22 @@ formData.append(
             body:formData
         }
     )
-    .then(() => {
+   .then(() => {
 
-       document
-      .getElementById("successMessage")
-      .scrollIntoView({
+    const success =
+        document.getElementById("successMessage");
+
+    success.style.display = "block";
+
+    success.scrollIntoView({
         behavior:"smooth",
         block:"center"
-});
+    });
 
-        document
+    document
         .getElementById("rsvpForm")
         .reset();
 
-    });
+});
 
 });

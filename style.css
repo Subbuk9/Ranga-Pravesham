@@ -309,9 +309,15 @@ body{
 
 .countdown-wrapper{
 
-    background:#341d1f;
+    background:#3b1b1f;
 
-    color:white;
+    border-radius:30px;
+
+    padding:40px 60px;
+
+    margin:60px auto;
+
+    max-width:1400px;
 
     display:flex;
 
@@ -320,23 +326,17 @@ body{
     align-items:center;
 
     gap:80px;
-
-    padding:35px 50px;
-
-    margin:50px auto;
-
-    border-radius:20px;
 }
 
 .countdown-text{
 
     font-family:'Cormorant Garamond',serif;
 
-    font-size:2rem;
+    font-size:3rem;
 
     font-style:italic;
 
-    color:#d6c4c4;
+    color:#d8c2c2;
 }
 
 .countdown-modern{
@@ -355,24 +355,22 @@ body{
 
 .time-value{
 
-    font-size:4rem;
-
     color:#d4af37;
 
-    line-height:1;
+    font-size:4.5rem;
 
-    font-family:'Cormorant Garamond',serif;
+    line-height:1;
 }
 
 .time-label{
 
-    font-size:.9rem;
+    color:#bbaaaa;
 
-    color:#c8b7b7;
-
-    letter-spacing:3px;
+    letter-spacing:4px;
 
     text-transform:uppercase;
+
+    font-size:.9rem;
 }
 
 .time-separator{
@@ -380,8 +378,6 @@ body{
     color:#8b6a32;
 
     font-size:3rem;
-
-    margin-top:-20px;
 }
 
 .event-grid p{

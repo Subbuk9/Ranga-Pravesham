@@ -115,85 +115,69 @@ document
 .getElementById("rsvpForm")
 .addEventListener("submit", function(e){
 
-```
-e.preventDefault();
+    e.preventDefault();
 
-const form =
-document.createElement("form");
+    const formData = new FormData();
 
-form.method = "POST";
-
-form.action =
-"https://docs.google.com/forms/d/e/1FAIpQLSd3oiAoQOrBLI9mBcajq2e8F3dRdnVVS95NeNWAXtoggg-lQQ/formResponse";
-
-form.target = "hidden_iframe";
-
-function addField(name,value){
-
-    const input =
-    document.createElement("input");
-
-    input.type = "hidden";
-
-    input.name = name;
-
-    input.value = value;
-
-    form.appendChild(input);
-}
-
-addField(
+formData.append(
     "entry.1191868580",
     document.getElementById("name").value
 );
 
-addField(
+formData.append(
     "entry.1819345462",
     document.getElementById("email").value
 );
 
-addField(
+formData.append(
     "entry.25566787",
     document.getElementById("phone").value
 );
 
-addField(
+formData.append(
     "entry.1075416591",
     document.getElementById("attendance").value
 );
 
-addField(
+formData.append(
     "entry.1301912319",
     document.getElementById("peopleCount").value
 );
 
-addField(
+formData.append(
     "entry.124294925",
     document.getElementById("accessibility").value
 );
 
-addField(
+formData.append(
     "entry.1257208760",
     document.getElementById("message").value
-);
+)
 
-document.body.appendChild(form);
+    fetch(
+        "https://docs.google.com/forms/d/e/1FAIpQLSd3oiAoQOrBLI9mBcajq2e8F3dRdnVVS95NeNWAXtoggg-lQQ/formResponse",
+        {
+            method:"POST",
+            mode:"no-cors",
+            body:formData
+        }
+    )
 
-form.submit();
+.then(() => {
 
-const success =
-    document.getElementById("successMessage");
+    const success =
+        document.getElementById("successMessage");
 
-success.style.display = "block";
+    success.style.display = "block";
 
-success.scrollIntoView({
-    behavior:"smooth",
-    block:"center"
-});
+    success.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
 
-document
-    .getElementById("rsvpForm")
-    .reset();
-```
+    document
+        .getElementById("rsvpForm")
+        .reset();
 
+}) 
 });

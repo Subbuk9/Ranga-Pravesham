@@ -11,10 +11,74 @@ body{
     background:var(--ivory);
     color:#2b1d14;
 }
+
 .navbar{
-    background:rgba(107,16,38,.95);
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    background:rgba(75,0,20,.95);
+
     backdrop-filter:blur(10px);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 40px;
+
+    box-sizing:border-box;
+
+    z-index:1000;
 }
+
+.logo{
+
+    color:#d4af37;
+
+    font-family:'Cinzel',serif;
+
+    font-size:1.4rem;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    text-decoration:none;
+}
+
+.links{
+
+    display:flex;
+
+    gap:35px;
+}
+
+.links a{
+
+    color:#f5e8c7;
+
+    text-decoration:none;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:1.2rem;
+
+    transition:.3s;
+}
+
+.links a:hover{
+
+    color:#d4af37;
+}
+
 .links a:hover{
     color:var(--gold);
 }
@@ -38,6 +102,10 @@ body{
     align-items:center;
     justify-content:center;
     text-align:center;
+}
+
+.hero{
+    padding-top:80px;
 }
 
 .section-divider{
@@ -83,21 +151,15 @@ body{
     letter-spacing:3px;
 }
 
-.hero h1{font-size:4rem}
-.btn,
-.rsvp-button{
+.hero h1{
 
-    background:linear-gradient(
-        135deg,
-        #e6c766,
-        #c79b2b
-    );
+    font-family:'Cinzel',serif;
 
-    color:#4d1a00;
+    font-size:4.5rem;
 
-    border:none;
+    line-height:1.2;
 
-    font-weight:600;
+    color:#f7f1df;
 }
 
 

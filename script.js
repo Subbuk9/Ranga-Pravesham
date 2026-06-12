@@ -154,27 +154,29 @@ formData.append(
     document.getElementById("message").value
 )
 
-    fetch(
-        "https://docs.google.com/forms/d/e/1FAIpQLSd3oiAoQOrBLI9mBcajq2e8F3dRdnVVS95NeNWAXtoggg-lQQ/formResponse",
-        {
-            method:"POST",
-            mode:"no-cors",
-            body:formData
-        }
-    )
-    .then(() => {
+   fetch(
+    "https://docs.google.com/forms/d/e/1FAIpQLSd3oiAoQOrBLI9mBcajq2e8F3dRdnVVS95NeNWAXtoggg-lQQ/formResponse",
+    {
+        method:"POST",
+        mode:"no-cors",
+        body:formData
+    }
+)
+.then(() => {
 
-       document
-      .getElementById("successMessage")
-      .scrollIntoView({
+    const success =
+        document.getElementById("successMessage");
+
+    success.style.display = "block";
+
+    success.scrollIntoView({
         behavior:"smooth",
         block:"center"
-});
-
-        document
-        .getElementById("rsvpForm")
-        .reset();
-
     });
 
+    document
+        .getElementById("rsvpForm")
+        .reset(); 
+            
+})      
 });

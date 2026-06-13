@@ -340,7 +340,7 @@ body{
 }
 
 .time-block{
-    transform: translateY(-10px);
+    transform: translateY(10px);
 }
 
 .time-separator{
@@ -348,7 +348,7 @@ body{
 } 
 
 .time-label{
-    margin-top:20px;
+    margin-top:30px;
 } 
 
 .time-block{

@@ -737,3 +737,141 @@ footer{
     }
 
 }
+
+@media (max-width:768px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        align-items:center;
+
+        padding:12px;
+
+        gap:10px;
+
+        height:auto;
+    }
+
+    .logo{
+
+        font-size:.95rem;
+
+        text-align:center;
+
+        line-height:1.3;
+
+        max-width:90%;
+    }
+
+    .links{
+
+        display:flex;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        align-items:center;
+
+        gap:8px;
+    }
+
+    .links a{
+
+        font-size:.85rem;
+
+        padding:4px 8px;
+    }
+
+    .hero{
+
+        padding-top:140px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .hero h1{
+
+        font-size:2.5rem;
+    }
+
+    .hero p{
+
+        font-size:1rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .card{
+
+        padding:30px 20px;
+
+        margin:20px 12px;
+    }
+
+}
+
+
+
+
+@media (max-width:768px){
+
+    .form-row{
+
+        display:block;
+    }
+
+    .form-group{
+
+        width:100%;
+
+        margin-bottom:15px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .gallery-slider{
+
+        height:350px;
+    }
+
+    .gallery-slider img{
+
+        max-height:350px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .countdown-modern{
+
+        gap:15px;
+    }
+
+    .time-value{
+
+        font-size:2.5rem;
+    }
+
+    .time-label{
+
+        font-size:.75rem;
+    }
+
+    .time-separator{
+
+        font-size:1.5rem;
+    }
+
+}
+

@@ -340,6 +340,10 @@ body{
 }
 
 .time-block{
+    transform: translateY(-60px);
+}
+
+.time-block{
 
     text-align:center;
 }

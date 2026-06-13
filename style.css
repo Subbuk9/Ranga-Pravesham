@@ -705,3 +705,13 @@ footer{
     position: relative;
     top: 20px;
 }
+
+.contact-link{
+    color:#7d0027;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.contact-link:hover{
+    color:#d4af37;
+}

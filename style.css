@@ -326,24 +326,18 @@ body{
 
     color:#7d0027;
 
-    margin-bottom:100px;
+    margin-bottom:15px;
 }
 
 .countdown-modern{
-
     display:flex;
-
     justify-content:center;
-
     align-items:flex-start;
-
     gap:50px;
-
     flex-wrap:wrap;
 
-    margin-top:-20px;
+    margin-top:-50px;
 }
-
 
 .time-block{
 

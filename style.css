@@ -340,12 +340,12 @@ body{
 }
 
 .time-block{
-    transform: translateY(-50px);
+    transform: translateY(-80px);
 }
 
 .time-separator{
-    transform: translateY(-30px);
-}
+    transform: translateY(-70px);
+} 
 
 .time-block{
 

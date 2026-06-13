@@ -648,58 +648,22 @@ footer{
     display:none;
 }
 
-.event-extra-details{
-
+.event-grid{
     display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:50px;
 
-    grid-template-columns:repeat(3,1fr);
+    max-width:1200px;
 
-    gap:30px;
-
-    max-width:1000px;
-
-    margin:50px auto 20px;
-}
-
-.detail-card{
+    margin:0 auto;
 
     text-align:center;
-
-    padding:25px;
-
-    border:1px solid rgba(212,175,55,.35);
-
-    border-radius:18px;
-
-    background:#fffaf0;
-}
-
-.detail-card h4{
-
-    color:#7d0027;
-
-    margin-bottom:10px;
-
-    font-size:1.3rem;
-
-    font-family:'Cinzel',serif;
-}
-
-.detail-card p{
-
-    margin:0;
-
-    line-height:1.8;
-
-    font-size:1.05rem;
 }
 
 @media(max-width:768px){
 
-    .event-extra-details{
-
+    .event-grid{
         grid-template-columns:1fr;
-
-        gap:15px;
     }
+
 }

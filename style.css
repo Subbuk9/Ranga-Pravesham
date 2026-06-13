@@ -719,6 +719,7 @@ footer{
 
 .logo{
     font-size:1.6rem;
+    font-family:'Cormorant Garamond', serif;
 }
 
 @media (max-width:768px){

@@ -715,3 +715,17 @@ footer{
 .contact-link:hover{
     color:#d4af37;
 }
+
+
+.logo{
+    font-size:1.6rem;
+}
+
+@media (max-width:768px){
+
+    .logo{
+        font-size:1rem;
+        line-height:1.2;
+    }
+
+}

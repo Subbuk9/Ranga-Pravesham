@@ -347,6 +347,10 @@ body{
     transform: translateY(30px);
 } 
 
+.time-label{
+    margin-top:20px;
+} 
+
 .time-block{
 
     text-align:center;

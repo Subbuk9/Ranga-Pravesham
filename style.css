@@ -340,11 +340,11 @@ body{
 }
 
 .time-block{
-    transform: translateY(-80px);
+    transform: translateY(-10px);
 }
 
 .time-separator{
-    transform: translateY(-70px);
+    transform: translateY(-10px);
 } 
 
 .time-block{

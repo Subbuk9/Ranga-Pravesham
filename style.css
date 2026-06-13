@@ -697,3 +697,11 @@ footer{
     }
 
 }
+
+
+.rsvp-title,
+.rsvp-small-title,
+.rsvp-intro{
+    position: relative;
+    top: 20px;
+}
